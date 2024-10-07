@@ -9,7 +9,7 @@ const AudioRecord = {
 };
 
 const eventsMap = {
-  data: 'data'
+  data: 'RNLiveAudioStream.data'
 };
 
 AudioRecord.on = (event, callback) => {
