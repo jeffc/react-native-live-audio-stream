@@ -97,7 +97,7 @@ public class RNLiveAudioStreamModule extends ReactContextBaseJavaModule {
                         // skip first 2 buffers to eliminate "click sound"
                         if (bytesRead > 0 && ++count > 2) {
                             base64Data = Base64.encodeToString(buffer, Base64.NO_WRAP);
-                            eventEmitter.emit("data", base64Data);
+                            eventEmitter.emit("RNLiveAudioStream.data", base64Data);
                         }
                     }
                     recorder.stop();

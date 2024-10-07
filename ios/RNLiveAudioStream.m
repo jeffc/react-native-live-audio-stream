@@ -86,13 +86,13 @@ void HandleInputBuffer(void *inUserData,
     long nsamples = inBuffer->mAudioDataByteSize;
     NSData *data = [NSData dataWithBytes:samples length:nsamples];
     NSString *str = [data base64EncodedStringWithOptions:0];
-    [pRecordState->mSelf sendEventWithName:@"data" body:str];
+    [pRecordState->mSelf sendEventWithName:@"RNLiveAudioStream.data" body:str];
 
     AudioQueueEnqueueBuffer(pRecordState->mQueue, inBuffer, 0, NULL);
 }
 
 - (NSArray<NSString *> *)supportedEvents {
-    return @[@"data"];
+    return @[@"RNLiveAudioStream.data"];
 }
 
 - (void)dealloc {
